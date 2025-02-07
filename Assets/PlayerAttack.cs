@@ -1,16 +1,31 @@
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+public class PlayerAttack : MonoBehaviour{
+    [SerializeField] private Animator anim;
+
+    [SerializeField] private float meleeSpeed;
+
+    [SerializeField] private float damage;
+
+    float timeUntilMelee;
+
+    private void Update()
     {
-        
+        if (timeUntilMelee <= 0f)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                anim.SetTrigger("Attack");
+                timeUntilMelee = meleeSpeed;
+            }
+        }
+        else
+            timeUntilMelee -= Time.deltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnTiggerEnter2D(Collider2D other){
+        if (other.tag == "Enemy")
+            // other.GetComponent<Enemy>().TakeDamage(damage);
+            Debug.Log("attacked");
     }
 }

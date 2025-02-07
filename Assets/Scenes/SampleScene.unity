@@ -608,6 +608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81988b6b17ccda34d9b15c26c91815f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 882873511}
+  meleeSpeed: 1
+  damage: 2
 --- !u!1 &1653419040
 GameObject:
   m_ObjectHideFlags: 0
