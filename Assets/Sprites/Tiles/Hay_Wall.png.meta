@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 0b9d72aa0d1da5544a3883faf8866f1b
+guid: a773279188a7f4742b0c8db7b32c09a5
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8483302467178345103
+    second: Hay_Wall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +73,9 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,62 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Baker_0
+      name: Hay_Wall_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 128
-      alignment: 9
-      pivot: {x: 0.4870801, y: -0.7403045}
-      border: {x: 64, y: 0, z: 0, w: 64}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64b8da93338232041a0d6a036e425df7
-      internalID: -623239746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Baker_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cc9a9f60a28c7784da3af3e130fee5fb
-      internalID: -2017388620
+      spriteID: 17dc3a14a51454a80800000000000000
+      internalID: -8483302467178345103
       vertices: []
       indices: 
       edges: []
@@ -167,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Baker_0: -623239746
-      Baker_1: -2017388620
+      Hay_Wall_0: -8483302467178345103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
