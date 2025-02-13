@@ -23,9 +23,10 @@ public class PlayerAttack : MonoBehaviour{
             timeUntilMelee -= Time.deltaTime;
     }
 
-    private void OnTiggerEnter2D(Collider2D other){
-        if (other.tag == "Enemy")
-            // other.GetComponent<Enemy>().TakeDamage(damage);
+    private void OnTriggerEnter2D(Collider2D other){
+        if (other.tag == "Enemy"){
+            other.GetComponent<Enemy>().TakeDamage(damage);
             Debug.Log("attacked");
+        }
     }
 }
