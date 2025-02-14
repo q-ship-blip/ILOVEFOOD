@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 309139628}
+  - component: {fileID: 309139629}
   m_Layer: 0
   m_Name: PlayerFacing
   m_TagString: Untagged
@@ -151,6 +152,18 @@ Transform:
   - {fileID: 1653419041}
   m_Father: {fileID: 882873513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309139629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309139627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a356ab68a524042a2f5776a9885a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410733473
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,9 +175,11 @@ GameObject:
   - component: {fileID: 410733475}
   - component: {fileID: 410733474}
   - component: {fileID: 410733476}
+  - component: {fileID: 410733478}
+  - component: {fileID: 410733477}
   m_Layer: 0
   m_Name: Corn_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,6 +276,121 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &410733477
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410733473}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 3.2}
+    newSize: {x: 0.52, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.735278, y: -1.3579806}
+      - {x: 0.5058972, y: -1.2186416}
+      - {x: 0.46068114, y: -1.1038876}
+      - {x: 0.5743652, y: -0.96133626}
+      - {x: 0.78508776, y: -0.51641595}
+      - {x: 0.91031027, y: 0.060085308}
+      - {x: 1.0053811, y: 0.5648455}
+      - {x: 1.1350881, y: 0.8422722}
+      - {x: 1.4116961, y: 0.9930241}
+      - {x: 1.2967837, y: 1.150752}
+      - {x: 0.82310325, y: 1.3056552}
+      - {x: 0.68101335, y: 1.2111245}
+      - {x: 0.51244795, y: 1.5171682}
+      - {x: 0.3460318, y: 1.5452799}
+      - {x: -0.12649682, y: 1.4687554}
+      - {x: -0.18583961, y: 1.2771512}
+      - {x: -0.3063067, y: 1.3444378}
+      - {x: -0.8671678, y: 1.3241439}
+      - {x: -0.9513373, y: 1.2715611}
+      - {x: -1.16792, y: 1.178112}
+      - {x: -1.1733917, y: 1.0828322}
+      - {x: -0.94675183, y: 0.97540027}
+      - {x: -0.7426441, y: 0.6443414}
+      - {x: -0.69206357, y: 0.23884743}
+      - {x: -0.6351248, y: 0.06057773}
+      - {x: -0.61047393, y: -0.33540326}
+      - {x: -0.5647143, y: -0.3314039}
+      - {x: -0.5854029, y: -0.65969425}
+      - {x: -0.5318806, y: -0.6818594}
+      - {x: -0.5223378, y: -0.8240911}
+      - {x: -0.46935892, y: -0.95069605}
+      - {x: -0.3471645, y: -1.006551}
+      - {x: -0.27730444, y: -1.0919267}
+      - {x: -0.37679482, y: -1.2926383}
+      - {x: -0.5492198, y: -1.3693589}
+      - {x: -0.5081971, y: -1.4310358}
+      - {x: -0.2671867, y: -1.4402785}
+      - {x: -0.16807726, y: -1.0819227}
+      - {x: 0.30950606, y: -1.1468672}
+      - {x: 0.36218274, y: -1.3739421}
+      - {x: 0.55042315, y: -1.3739421}
+  m_UseDelaunayMesh: 0
+--- !u!50 &410733478
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410733473}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12c4b2d9056a6a4d8dbf28d6e2c5eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
+  damping: 0
+  target: {fileID: 882873513}
 --- !u!1 &872251146
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +510,7 @@ GameObject:
   - component: {fileID: 872251147}
   - component: {fileID: 872251149}
   - component: {fileID: 872251148}
+  - component: {fileID: 872251150}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -2321,6 +2455,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &872251150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872251146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de67fac8ff21d043ad30a31acfb1ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!1 &882873510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,7 +2748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 882873511}
   meleeSpeed: 0.3
-  damage: 2
+  damage: 1
 --- !u!1 &1229424348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,7 +3325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2115938781
 Transform:
   m_ObjectHideFlags: 0
