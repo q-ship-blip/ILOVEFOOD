@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour{
                 anim.SetTrigger("Attack");
                 timeUntilMelee = meleeSpeed;
             }
-        }
+        }  
         else
             timeUntilMelee -= Time.deltaTime;
     }
