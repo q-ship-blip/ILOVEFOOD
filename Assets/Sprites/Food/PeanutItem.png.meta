@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aeaf2ef2062e5cc4d8a0fe5eb9656a9c
+guid: 7ba295a7a1e3aec42a820d0a58d01a00
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -421468957569630276
-    second: RedMeal_0
+      213: -5165091465505077436
+    second: PeanutItem_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RedMeal_0
+      name: PeanutItem_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
-        width: 28
-        height: 20
+        x: 7
+        y: 8
+        width: 22
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbf35345734a62af0800000000000000
-      internalID: -421468957569630276
+      spriteID: 4470b2e8da8e158b0800000000000000
+      internalID: -5165091465505077436
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PeanutItem_0: -5165091465505077436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
