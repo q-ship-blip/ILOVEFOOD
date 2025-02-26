@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Peanut_Projectile_0: -3993679873475985610
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
