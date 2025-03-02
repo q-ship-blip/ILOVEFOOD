@@ -1,39 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum HeartStatus { Full, Half, Empty }
+
 public class HealthController : MonoBehaviour
 {
-    public Sprite fullHeart, halfHeart, emptyHeart;
-    Image heartImage;
+    public Image heartImage;             // Assign your heart's Image component.
+    public Sprite fullHeartSprite;
+    public Sprite halfHeartSprite;
+    public Sprite emptyHeartSprite;
 
-    private void Awake()
+    public void SetHeartImage(HeartStatus status)
     {
-        heartImage = GetComponent<Image>();
-
-    }
-    public void SetHeartImage (HeartStatus status)
-    {
-        switch(status) 
+        switch (status)
         {
-            case HeartStatus.Empty:
-                heartImage.sprite = emptyHeart;
+            case HeartStatus.Full:
+                heartImage.sprite = fullHeartSprite;
                 break;
             case HeartStatus.Half:
-                heartImage.sprite = halfHeart;
+                heartImage.sprite = halfHeartSprite;
                 break;
-            case HeartStatus.Full:
-                heartImage.sprite = fullHeart;
+            case HeartStatus.Empty:
+                heartImage.sprite = emptyHeartSprite;
                 break;
-                    
         }
     }
-}
-
-public enum HeartStatus
-{
-    Empty = 0,
-    Half = 1,
-    Full = 2,
 }

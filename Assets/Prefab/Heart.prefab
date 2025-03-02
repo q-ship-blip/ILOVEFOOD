@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &135925154541854377
 CanvasRenderer:
@@ -90,10 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
+  m_MinWidth: 100
+  m_MinHeight: 100
+  m_PreferredWidth: 100
+  m_PreferredHeight: 100
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91448fcf538a8a4ba9efe388162dac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullHeart: {fileID: -8217692036733259183, guid: afde7b18dc3adb94fba570efc238f9f6, type: 3}
-  halfHeart: {fileID: -5573714303573590071, guid: afde7b18dc3adb94fba570efc238f9f6, type: 3}
-  emptyHeart: {fileID: -7820894492349042593, guid: afde7b18dc3adb94fba570efc238f9f6, type: 3}
+  heartImage: {fileID: 7358873590814074794}
+  fullHeartSprite: {fileID: -8217692036733259183, guid: afde7b18dc3adb94fba570efc238f9f6, type: 3}
+  halfHeartSprite: {fileID: -5573714303573590071, guid: afde7b18dc3adb94fba570efc238f9f6, type: 3}
+  emptyHeartSprite: {fileID: -7820894492349042593, guid: afde7b18dc3adb94fba570efc238f9f6, type: 3}
