@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6642880897345625208}
   - component: {fileID: 3575613936728587715}
   - component: {fileID: 454047400755606873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Corn_0 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -121,14 +121,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6279692972518500662}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -138,7 +138,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!60 &3575613936728587715
 PolygonCollider2D:
@@ -242,5 +242,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  player: {fileID: 0}
-  speed: 2
+  possibleDrops:
+  - itemPrefab: {fileID: 7937882450561744072, guid: 12f400fa0f0d6f64798bd78aef048d90, type: 3}
+    dropChance: 1
+  - itemPrefab: {fileID: 7937882450561744072, guid: 12f400fa0f0d6f64798bd78aef048d90, type: 3}
+    dropChance: 0
+  - itemPrefab: {fileID: 0}
+    dropChance: 0
+  - itemPrefab: {fileID: 0}
+    dropChance: 0
+  - itemPrefab: {fileID: 0}
+    dropChance: 0

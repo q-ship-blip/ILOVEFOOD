@@ -1,26 +1,25 @@
 using UnityEngine;
 
+[System.Serializable]
+public class DropItem
+{
+    public GameObject itemPrefab;
+    [Range(0f, 1f)] public float dropChance;
+}
+
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float health = 100f; // Default health
-    public GameObject player;
-    public float speed = 2f;
+    [SerializeField] private float health = 100f;
 
-    private float distance;
-    private bool isDead = false; // Flag to prevent movement after death
+    [Header("Item Drops")]
+    public DropItem[] possibleDrops = new DropItem[5]; 
 
-    void Update()
-    {
-        if (player == null || isDead) return; // Prevent errors if player is missing or enemy is dead
-
-        distance = Vector2.Distance(transform.position, player.transform.position);
-
-        // Move towards the player
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-    }
+    private bool isDead = false;
 
     public void TakeDamage(float damage)
     {
+        if (isDead) return;
+
         Debug.Log(gameObject.name + " took damage: " + damage);
 
         health -= damage;
@@ -34,8 +33,26 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        if (isDead) return;
+
         Debug.Log(gameObject.name + " died!");
-        isDead = true; // Stop movement in Update()
+        isDead = true;
+
+        DropLoot();
         Destroy(gameObject);
+    }
+
+    private void DropLoot()
+    {
+        foreach (DropItem drop in possibleDrops)
+        {
+            if (drop.itemPrefab == null) continue;
+
+            float chance = Random.Range(0f, 1f);
+            if (chance <= drop.dropChance)
+            {
+                Instantiate(drop.itemPrefab, transform.position, Quaternion.identity);
+            }
+        }
     }
 }
