@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2060024753782619694}
   - component: {fileID: 4131819801126349052}
   - component: {fileID: 7736110220388230154}
+  - component: {fileID: 4217354658423744732}
   m_Layer: 0
   m_Name: Peanut_0
   m_TagString: Enemy
@@ -103,8 +104,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  player: {fileID: 0}
-  speed: 2
+  possibleDrops:
+  - itemPrefab: {fileID: 0}
+    dropChance: 0
+  - itemPrefab: {fileID: 0}
+    dropChance: 0
+  - itemPrefab: {fileID: 0}
+    dropChance: 0
+  - itemPrefab: {fileID: 0}
+    dropChance: 0
+  - itemPrefab: {fileID: 0}
+    dropChance: 0
 --- !u!50 &4131819801126349052
 Rigidbody2D:
   serializedVersion: 5
@@ -184,3 +194,19 @@ PolygonCollider2D:
       - {x: 0.328125, y: -0.578125}
       - {x: 0.328125, y: 0.578125}
   m_UseDelaunayMesh: 0
+--- !u!114 &4217354658423744732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262810523791728019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57165505a77339246b323f2fc0c9afb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
+  sprite3: {fileID: 0}
+  frameRate: 0.25
