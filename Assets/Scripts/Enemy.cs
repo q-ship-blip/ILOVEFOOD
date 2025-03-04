@@ -12,9 +12,21 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float health = 100f;
 
     [Header("Item Drops")]
-    public DropItem[] possibleDrops = new DropItem[5]; 
+    public DropItem[] possibleDrops = new DropItem[5];
 
     private bool isDead = false;
+
+    // Reference to the animator
+    private SimpleAnimation spriteAnimator;  // Moved inside the class!
+
+    void Start()
+    {
+        spriteAnimator = GetComponent<SimpleAnimation>();
+        if (spriteAnimator == null)
+        {
+            Debug.LogError("SimpleAnimation component missing on " + gameObject.name);
+        }
+    }
 
     public void TakeDamage(float damage)
     {
@@ -28,6 +40,10 @@ public class Enemy : MonoBehaviour
         if (health <= 0f)
         {
             Die();
+        }
+        else
+        {
+            spriteAnimator?.SetThirdState(0.2f);  // This will work if spriteAnimator was found in Start()
         }
     }
 
