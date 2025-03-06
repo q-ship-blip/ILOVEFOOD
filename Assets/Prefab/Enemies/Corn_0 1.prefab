@@ -245,5 +245,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: -7944502702452990849, guid: b7ffb134b16225d419dbe85b7b85c119, type: 3}
   sprite2: {fileID: 744626942, guid: b7ffb134b16225d419dbe85b7b85c119, type: 3}
-  sprite3: {fileID: 21300000, guid: 9c3c175801454c441ac89163e45e326e, type: 3}
+  sprite3: {fileID: -2480009542854542071, guid: 4181af13aa335a249941503ff9cb6ebc, type: 3}
   frameRate: 0.25
