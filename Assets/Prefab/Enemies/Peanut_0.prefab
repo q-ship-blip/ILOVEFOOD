@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4131819801126349052}
   - component: {fileID: 7736110220388230154}
   - component: {fileID: 4217354658423744732}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peanut_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}

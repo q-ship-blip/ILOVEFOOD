@@ -9,12 +9,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - Enemy
-  - Walls
-  - 
+  - Player
+  - ItemPickup
+  - ItemsDrops
   - 
   - 
   - 
