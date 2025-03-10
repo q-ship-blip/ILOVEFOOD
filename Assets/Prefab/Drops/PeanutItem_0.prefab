@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5602029796947080930}
   - component: {fileID: 2509527881853977577}
   - component: {fileID: 4727531978119587774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PeanutItem_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

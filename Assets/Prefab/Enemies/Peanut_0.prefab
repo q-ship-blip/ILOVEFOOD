@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4131819801126349052}
   - component: {fileID: 7736110220388230154}
   - component: {fileID: 4217354658423744732}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peanut_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   possibleDrops:
-  - itemPrefab: {fileID: 0}
-    dropChance: 0
+  - itemPrefab: {fileID: 6053080346239854545, guid: 2078a92f77400c445a8304daf014e547, type: 3}
+    dropChance: 1
   - itemPrefab: {fileID: 0}
     dropChance: 0
   - itemPrefab: {fileID: 0}
