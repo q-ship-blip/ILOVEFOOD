@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 3575613936728587715}
   - component: {fileID: 454047400755606873}
   - component: {fileID: -4679822143523497351}
+  - component: {fileID: 1492414614126042571}
+  - component: {fileID: 494214691674964099}
+  - component: {fileID: 5721803087294913907}
   m_Layer: 3
   m_Name: Corn_0 1
   m_TagString: Enemy
@@ -247,3 +250,64 @@ MonoBehaviour:
   sprite2: {fileID: 744626942, guid: b7ffb134b16225d419dbe85b7b85c119, type: 3}
   sprite3: {fileID: -2480009542854542071, guid: 4181af13aa335a249941503ff9cb6ebc, type: 3}
   frameRate: 0.25
+--- !u!114 &1492414614126042571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279692972518500662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &494214691674964099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279692972518500662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e948fafc1dd7314db4ee10b27526e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseRange: 6
+  speed: 2
+  nextWaypointDistance: 0.5
+  pathUpdateInterval: 0.5
+  attackStopRange: 1
+  AttackPosition: 0
+  movementOffset: {x: 0, y: -0.5}
+--- !u!114 &5721803087294913907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279692972518500662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a4c5faebc6c354aa9beac809daca41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageInterval: 0.4
+  damageAmount: 1
