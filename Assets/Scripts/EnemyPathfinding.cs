@@ -3,26 +3,25 @@ using Pathfinding;
 
 public class EnemyPathfinding : MonoBehaviour
 {
-    public float chaseRange = 5f;             // Distance within which the enemy will start chasing the player.
+    public float chaseRange = 5f;             // Distance within which the enemy chases the player.
     public float speed = 3f;                  // Movement speed.
-    public float nextWaypointDistance = 0.5f;   // Distance from waypoint to consider it reached.
+    public float nextWaypointDistance = 0.5f;   // Distance to consider a waypoint reached.
     public float pathUpdateInterval = 0.5f;     // How often to update the path.
-    
-    // When the enemy is within this range, it will stop moving and "attack"
-    public float attackStopRange = 1f;
-    
-    // This variable is set to true when the enemy is in attack position and can be used by other scripts.
-    public bool AttackPosition = false;
+    public float attackStopRange = 1f;          // Distance at which enemy stops to attack.
     
     // Offset to adjust the effective movement pivot (set this in the Inspector)
     public Vector2 movementOffset = new Vector2(0, -0.5f);
+    
+    // This is set to true when the enemy is in attack position.
+    public bool AttackPosition = false;
     
     private Transform target;                 // The player's transform.
     private Seeker seeker;
     private Path path;
     private int currentWaypoint = 0;
-    private Collider2D enemyCollider;         // The enemy's collider.
-    
+    private Collider2D enemyCollider;
+    private Rigidbody2D rb;                   // Rigidbody2D reference for physics movement.
+
     void Start()
     {
         // Find the player by tag if not assigned.
@@ -35,10 +34,11 @@ public class EnemyPathfinding : MonoBehaviour
 
         seeker = GetComponent<Seeker>();
         enemyCollider = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
         InvokeRepeating(nameof(UpdatePath), 0f, pathUpdateInterval);
     }
 
-    // Returns the enemy's effective center, adjusted by movementOffset.
+    // Get the enemy's effective center using its collider plus the offset.
     Vector2 GetEnemyCenter()
     {
         if (enemyCollider != null)
@@ -48,17 +48,18 @@ public class EnemyPathfinding : MonoBehaviour
 
     void UpdatePath()
     {
-        // Only update the path if the player is within chase range and outside of attack range.
         if (target != null &&
             Vector2.Distance(GetEnemyCenter(), target.position) <= chaseRange &&
             Vector2.Distance(GetEnemyCenter(), target.position) > attackStopRange)
         {
             if (seeker.IsDone())
+            {
                 seeker.StartPath(GetEnemyCenter(), target.position, OnPathComplete);
+            }
         }
         else
         {
-            path = null;  // Clear the path if the target is out of range or already within attack range.
+            path = null;  // Clear the path if the target is out of range or within attack range.
         }
     }
 
@@ -68,6 +69,7 @@ public class EnemyPathfinding : MonoBehaviour
         {
             path = p;
             currentWaypoint = 0;
+            Debug.Log("Path updated. Waypoints count: " + path.vectorPath.Count);
         }
     }
 
@@ -76,34 +78,48 @@ public class EnemyPathfinding : MonoBehaviour
         if (target == null)
             return;
         
-        // Check if the enemy is close enough to the player to stop and "attack".
-        if (Vector2.Distance(GetEnemyCenter(), target.position) <= attackStopRange)
+        float distanceToTarget = Vector2.Distance(GetEnemyCenter(), target.position);
+        Debug.Log("Distance to target: " + distanceToTarget + " | AttackStopRange: " + attackStopRange);
+
+        // If within attack range, stop moving.
+        if (distanceToTarget <= attackStopRange)
         {
             AttackPosition = true;
-            return; // Stop movement when in attack range.
+            Debug.Log("In attack range, not moving.");
+            return;
         }
         else
         {
             AttackPosition = false;
         }
-        
+
         if (path == null)
+        {
+            Debug.Log("No path available.");
             return;
+        }
 
         Vector2 currentPosition = GetEnemyCenter();
 
         if (currentWaypoint >= path.vectorPath.Count)
+        {
+            Debug.Log("Reached end of path.");
             return;
+        }
 
-        // Move towards the next waypoint.
+        // Calculate movement direction.
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - currentPosition).normalized;
         Vector2 movement = direction * speed * Time.fixedDeltaTime;
-        transform.position += (Vector3)movement;
+        
+        // Move using Rigidbody2D so collisions are handled.
+        rb.MovePosition(rb.position + movement);
+        Debug.Log("Moving enemy by: " + movement);
 
-        // Check if the enemy is close enough to the current waypoint to consider it reached.
+        // Advance to next waypoint if close enough.
         if (Vector2.Distance(currentPosition, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
         {
             currentWaypoint++;
+            Debug.Log("Advancing to waypoint: " + currentWaypoint);
         }
     }
 }
