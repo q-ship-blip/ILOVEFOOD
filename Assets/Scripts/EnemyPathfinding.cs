@@ -3,13 +3,17 @@ using Pathfinding;
 
 public class EnemyPathfinding : MonoBehaviour
 {
+    [Header("Pathfinding Settings")]
     public float chaseRange = 5f;             // Distance within which the enemy chases the player.
-    public float speed = 3f;                  // Movement speed.
-    public float nextWaypointDistance = 0.5f;   // Distance to consider a waypoint reached.
+    public float speed = 3f;                  // Base movement speed.
+    public float nextWaypointDistance = 0.6f;   // Distance to consider a waypoint reached.
     public float pathUpdateInterval = 0.5f;     // How often to update the path.
     public float attackStopRange = 1f;          // Distance at which enemy stops to attack.
-    
-    // Offset to adjust the effective movement pivot (set this in the Inspector)
+
+    [Header("Smoothing Settings")]
+    public float smoothingTime = 0.1f;          // How quickly the enemy accelerates/decelerates.
+
+    // Offset to adjust the effective movement pivot (set in Inspector)
     public Vector2 movementOffset = new Vector2(0, -0.5f);
     
     // This is set to true when the enemy is in attack position.
@@ -20,7 +24,8 @@ public class EnemyPathfinding : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
     private Collider2D enemyCollider;
-    private Rigidbody2D rb;                   // Rigidbody2D reference for physics movement.
+    private Rigidbody2D rb;                   // For physics-based movement.
+    private Vector2 velocityRef = Vector2.zero; // Used for SmoothDamp.
 
     void Start()
     {
@@ -35,10 +40,11 @@ public class EnemyPathfinding : MonoBehaviour
         seeker = GetComponent<Seeker>();
         enemyCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+
         InvokeRepeating(nameof(UpdatePath), 0f, pathUpdateInterval);
     }
 
-    // Get the enemy's effective center using its collider plus the offset.
+    // Returns the enemy's effective center using its collider plus the offset.
     Vector2 GetEnemyCenter()
     {
         if (enemyCollider != null)
@@ -59,7 +65,7 @@ public class EnemyPathfinding : MonoBehaviour
         }
         else
         {
-            path = null;  // Clear the path if the target is out of range or within attack range.
+            path = null;  // Clear the path if target is out of chase range or within attack range.
         }
     }
 
@@ -69,7 +75,6 @@ public class EnemyPathfinding : MonoBehaviour
         {
             path = p;
             currentWaypoint = 0;
-            Debug.Log("Path updated. Waypoints count: " + path.vectorPath.Count);
         }
     }
 
@@ -79,13 +84,12 @@ public class EnemyPathfinding : MonoBehaviour
             return;
         
         float distanceToTarget = Vector2.Distance(GetEnemyCenter(), target.position);
-        Debug.Log("Distance to target: " + distanceToTarget + " | AttackStopRange: " + attackStopRange);
 
-        // If within attack range, stop moving.
+        // If within attack range, set AttackPosition true and stop movement.
         if (distanceToTarget <= attackStopRange)
         {
             AttackPosition = true;
-            Debug.Log("In attack range, not moving.");
+            rb.linearVelocity = Vector2.zero; // Stop moving
             return;
         }
         else
@@ -94,32 +98,29 @@ public class EnemyPathfinding : MonoBehaviour
         }
 
         if (path == null)
-        {
-            Debug.Log("No path available.");
             return;
-        }
 
         Vector2 currentPosition = GetEnemyCenter();
 
+        // Check if we've reached the end of the path.
         if (currentWaypoint >= path.vectorPath.Count)
-        {
-            Debug.Log("Reached end of path.");
             return;
-        }
 
-        // Calculate movement direction.
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - currentPosition).normalized;
-        Vector2 movement = direction * speed * Time.fixedDeltaTime;
-        
-        // Move using Rigidbody2D so collisions are handled.
-        rb.MovePosition(rb.position + movement);
-        Debug.Log("Moving enemy by: " + movement);
+        // Calculate the target position from the current waypoint.
+        Vector2 targetPos = (Vector2)path.vectorPath[currentWaypoint];
+        Vector2 direction = (targetPos - currentPosition).normalized;
+        Vector2 desiredVelocity = direction * speed;
 
-        // Advance to next waypoint if close enough.
-        if (Vector2.Distance(currentPosition, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
+        // Smoothly interpolate velocity.
+        Vector2 smoothedVelocity = Vector2.SmoothDamp(rb.linearVelocity, desiredVelocity, ref velocityRef, smoothingTime);
+
+        // Use MovePosition for physics-based movement.
+        rb.MovePosition(rb.position + smoothedVelocity * Time.fixedDeltaTime);
+
+        // If close enough to the waypoint, move to the next one.
+        if (Vector2.Distance(currentPosition, targetPos) < nextWaypointDistance)
         {
             currentWaypoint++;
-            Debug.Log("Advancing to waypoint: " + currentWaypoint);
         }
     }
 }
