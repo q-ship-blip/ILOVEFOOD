@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b3608539cdad2da45b01b3427efe674c
+guid: 9e2ca703a4a5d7f4d97d79a048f77236
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      CornWeapon_0: 8513715786162683034
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
