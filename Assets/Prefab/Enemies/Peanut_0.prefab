@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 7736110220388230154}
   - component: {fileID: 4217354658423744732}
   - component: {fileID: 986028725067706330}
-  - component: {fileID: -7344170072716263910}
   - component: {fileID: -2078390133799010961}
+  - component: {fileID: 4923379708925677575}
   m_Layer: 3
   m_Name: Peanut_0
   m_TagString: Enemy
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 4262810523791728019}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.4, y: -5.27, z: 0}
+  m_LocalPosition: {x: 3.36, y: -5.11, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -144,7 +144,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!60 &7736110220388230154
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -241,25 +241,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &-7344170072716263910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4262810523791728019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e948fafc1dd7314db4ee10b27526e22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseRange: 5
-  speed: 5
-  nextWaypointDistance: 0.5
-  pathUpdateInterval: 0.5
-  attackStopRange: 0.5
-  AttackPosition: 0
-  movementOffset: {x: 0, y: -0.5}
 --- !u!114 &-2078390133799010961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,3 +255,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageInterval: 0.5
   damageAmount: 1
+--- !u!114 &4923379708925677575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262810523791728019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d2cf1ce09dea24d9035ac0836a3fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseRange: 10
+  speed: 3
+  nextWaypointDistance: 0.6
+  pathUpdateInterval: 0.5
+  attackStopRange: 5
+  smoothingTime: 0.1
+  movementOffset: {x: 0, y: -0.5}
+  AttackPosition: 0
