@@ -45,14 +45,14 @@ public class PeanutProjectile : MonoBehaviour
     // Called when the projectile enters a trigger collider.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // If it hits a wall, destroy it immediately.
-        if (collision.CompareTag("Wall"))
+        // If it hits a Wall or Shield, destroy it immediately.
+        if (collision.CompareTag("Wall") || collision.CompareTag("Shield"))
         {
             Destroy(gameObject);
             return;
         }
         
-        // If it hits the player, deal damage (only once) and destroy the projectile.
+        // If it hits the Player, deal damage (only once) and destroy the projectile.
         if (collision.CompareTag("Player") && !hasDealtDamage)
         {
             hasDealtDamage = true;
