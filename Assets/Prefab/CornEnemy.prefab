@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseRange: 10
-  speed: 2
+  speed: 3
   nextWaypointDistance: 0.5
   pathUpdateInterval: 0.1
   attackStopRange: 2

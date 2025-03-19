@@ -17,9 +17,16 @@ public class PlayerAttack : MonoBehaviour
 
     // Flag to prevent overlapping swipes
     private bool isSwiping = false;
+
+    // Toggle for enabling/disabling attacks
+    public bool enableAttack = true;
     
     void Update()
     {
+        // Check if attacking is enabled
+        if (!enableAttack)
+            return;
+
         // Start attack on left mouse button click if not already swiping.
         if (Input.GetMouseButtonDown(0) && !isSwiping)
         {

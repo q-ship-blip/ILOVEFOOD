@@ -22,6 +22,9 @@ public class PlayerShield : MonoBehaviour
     [Tooltip("Maximum angle (in degrees) for triggering the flip on flipTransform.")]
     public float flipMaxAngle = 270f;
 
+    // Toggle for enabling/disabling shield functionality
+    public bool enableShield = true;
+
     private PlayerMovement playerMovement;
     private float originalSpeed;
     private bool shieldActive = false;
@@ -53,6 +56,14 @@ public class PlayerShield : MonoBehaviour
 
     void Update()
     {
+        // If shield functionality is disabled, ensure the shield is off.
+        if (!enableShield)
+        {
+            if (shieldActive)
+                DeactivateShield();
+            return;
+        }
+        
         // Activate shield on right-click press.
         if (Input.GetMouseButtonDown(1))
         {
