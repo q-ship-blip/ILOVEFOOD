@@ -8,6 +8,8 @@ TagManager:
   - Weapons
   - Wall
   - Shield
+  - Window
+  - Barrier
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Weapon
   - PeanutProjectile
   - Shield
-  - 
+  - Barrier
   - 
   - 
   - 

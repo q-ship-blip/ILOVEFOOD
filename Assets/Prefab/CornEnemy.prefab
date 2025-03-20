@@ -339,8 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e948fafc1dd7314db4ee10b27526e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRange: 10
-  speed: 3
+  chaseRange: 20
+  speed: 4
   nextWaypointDistance: 0.5
   pathUpdateInterval: 0.1
   attackStopRange: 2

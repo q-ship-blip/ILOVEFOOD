@@ -6,20 +6,37 @@ public class TutorialController : MonoBehaviour
     public PlayerAttack playerAttack;   // Reference to the sword script
     public PlayerShield playerShield;   // Reference to the shield script
 
-    [Header("Lock Objects")]
-    public GameObject shieldLockObject; // Object to disable when shield unlocks
-    public GameObject swordLockObject;  // Object to disable when sword unlocks
+    [Header("Shield Unlock via Items")]
+    [Tooltip("Name of the item needed to unlock the shield (must match ItemPickup.itemName).")]
+    public string shieldItemName = "Coin";  // Default to "Coin"
+    [Tooltip("Number of items required to unlock the shield.")]
+    public int shieldItemGoal = 1;          // Default to 1
 
-    [Header("Optional Wall to Disable")]
-    public GameObject someWall;         // Wall or barrier to disable when sword unlocks
+    [Header("Lock Objects")]
+    [Tooltip("Object to disable when shield unlocks (e.g., a shield lock icon).")]
+    public GameObject shieldLockObject;
+
+    [Header("Sword Unlock via Peanut Blocks")]
+    [Tooltip("Object to disable when sword unlocks (e.g., a sword lock icon).")]
+    public GameObject swordLockObject;
+
+    [Header("Item Collection Unlock (Optional Third Object)")]
+    [Tooltip("Name of the item to track (must match ItemPickup.itemName).")]
+    public string targetItemName;
+    [Tooltip("Number of items required to unlock/disable the third object.")]
+    public int itemPickupGoal = 5;
+    [Tooltip("Third object to disable when enough items are collected.")]
+    public GameObject thirdLockObject;
+
+    [Tooltip("Reference to the player's inventory.")]
+    public PlayerInventory playerInventory;
 
     private bool shieldUnlocked = false;
     private bool swordUnlocked = false;
-    private int blockedPeanuts = 0;
 
     void Start()
     {
-        // Initially disable the weapon scripts
+        // Initially disable the weapon scripts.
         if (playerAttack != null)
             playerAttack.enabled = false;
         if (playerShield != null)
@@ -28,33 +45,38 @@ public class TutorialController : MonoBehaviour
 
     void Update()
     {
-        // Unlock shield on any WASD input
-        if (!shieldUnlocked && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) ||
-                                 Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
+        // 1) Check if we can unlock the shield by picking up enough of "shieldItemName".
+        if (!shieldUnlocked && playerInventory != null)
         {
-            UnlockShield();
+            int shieldItemCount = playerInventory.GetItemCount(shieldItemName);
+            if (shieldItemCount >= shieldItemGoal)
+            {
+                UnlockShield();
+            }
         }
-    }
 
-    public void RegisterPeanutBlock()
-    {
-        // Only count blocks if the shield is unlocked
-        if (!shieldUnlocked)
-            return;
-
-        blockedPeanuts++;
-        Debug.Log("Peanut blocked! Count: " + blockedPeanuts);
-
-        if (blockedPeanuts >= 3 && !swordUnlocked)
+        // 2) Unlock sword after 3 peanuts are blocked.
+        if (!swordUnlocked && PeanutProjectile.blockedByShieldCount >= 3)
         {
             UnlockSword();
+        }
+
+        // 3) Optionally disable a third object after collecting enough of "targetItemName".
+        if (playerInventory != null && thirdLockObject != null && thirdLockObject.activeSelf)
+        {
+            int count = playerInventory.GetItemCount(targetItemName);
+            if (count >= itemPickupGoal)
+            {
+                Debug.Log($"Collected enough {targetItemName} ({count}), disabling third lock object!");
+                thirdLockObject.SetActive(false);
+            }
         }
     }
 
     private void UnlockShield()
     {
         shieldUnlocked = true;
-        Debug.Log("Shield unlocked!");
+        Debug.Log("Shield unlocked by item pickup!");
 
         if (playerShield != null)
             playerShield.enabled = true;
@@ -66,16 +88,12 @@ public class TutorialController : MonoBehaviour
     private void UnlockSword()
     {
         swordUnlocked = true;
-        Debug.Log("UnlockSword() method called.");
-        Debug.Log("Sword unlocked!");
+        Debug.Log("Sword unlocked after blocking peanuts!");
 
         if (playerAttack != null)
             playerAttack.enabled = true;
 
         if (swordLockObject != null)
             swordLockObject.SetActive(false);
-
-        if (someWall != null)
-            someWall.SetActive(false);
     }
 }
