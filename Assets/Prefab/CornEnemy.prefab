@@ -344,9 +344,10 @@ MonoBehaviour:
   nextWaypointDistance: 0.5
   pathUpdateInterval: 0.1
   attackStopRange: 2
-  smoothingTime: 0.04
+  smoothingTime: 0
   movementOffset: {x: 0, y: 0}
   AttackPosition: 0
+  endReachedThreshold: 0.5
 --- !u!114 &5721803087294913907
 MonoBehaviour:
   m_ObjectHideFlags: 0
