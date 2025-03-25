@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e26d01aa8165887438f7b1fa30a5de54
+guid: e93710e784b306145af8c601b56c6a06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7745393598498631069
-    second: Gate_Right_0
+      213: -2444159366176906723
+    second: Burger_Damaged_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gate_Right_0
+      name: Burger_Damaged_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 28
+        x: 5
+        y: 5
+        width: 56
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9d6814e07a2d7b60800000000000000
-      internalID: 7745393598498631069
+      spriteID: d12e494910a941ed0800000000000000
+      internalID: -2444159366176906723
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Gate_Right_0: 7745393598498631069
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
