@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite1: {fileID: 731375368619335737, guid: 8a1f0494f84efb248aea6e5d45d5a1be, type: 3}
   sprite2: {fileID: 731375368619335737, guid: 8a1f0494f84efb248aea6e5d45d5a1be, type: 3}
-  sprite3: {fileID: 9163354664188559619, guid: 6e4e5f6e398d66741abb0bb7b0af03bf, type: 3}
+  sprite3: {fileID: -2444159366176906723, guid: a2792ec04f405314191937153f9cca3d, type: 3}
   frameRate: 0.25
 --- !u!114 &3622016971551066068
 MonoBehaviour:
@@ -272,7 +272,7 @@ MonoBehaviour:
   speed: 3
   nextWaypointDistance: 0.6
   pathUpdateInterval: 0.5
-  attackStopRange: 3
+  attackStopRange: 4
   smoothingTime: 0.1
   movementOffset: {x: 0, y: -0.5}
   AttackPosition: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burgerProjectilePrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  shotDelay: 0.4
+  - {fileID: 250756263130032399, guid: 9cb550a3791f8474b9bce778fc6491be, type: 3}
+  - {fileID: 4718728417987802092, guid: 1534f209bf1810345809d9cd4ebd2e2f, type: 3}
+  - {fileID: 120557075871844918, guid: c947d0034e854b348afe65bfab14a2c3, type: 3}
+  shotDelay: 2
