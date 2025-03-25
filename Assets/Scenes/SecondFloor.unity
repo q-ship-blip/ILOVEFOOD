@@ -19974,22 +19974,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 835601320075480014, guid: b009721de51521d4bad6a5241ecf3a52, type: 3}
-      propertyPath: 'burgerProjectilePrefabs.Array.data[0]'
-      value: 
-      objectReference: {fileID: 250756263130032399, guid: 9cb550a3791f8474b9bce778fc6491be, type: 3}
-    - target: {fileID: 835601320075480014, guid: b009721de51521d4bad6a5241ecf3a52, type: 3}
-      propertyPath: 'burgerProjectilePrefabs.Array.data[1]'
-      value: 
-      objectReference: {fileID: 4718728417987802092, guid: 1534f209bf1810345809d9cd4ebd2e2f, type: 3}
-    - target: {fileID: 835601320075480014, guid: b009721de51521d4bad6a5241ecf3a52, type: 3}
-      propertyPath: 'burgerProjectilePrefabs.Array.data[2]'
-      value: 
-      objectReference: {fileID: 120557075871844918, guid: c947d0034e854b348afe65bfab14a2c3, type: 3}
-    - target: {fileID: 2522599696605246172, guid: b009721de51521d4bad6a5241ecf3a52, type: 3}
-      propertyPath: attackStopRange
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
