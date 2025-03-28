@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Potato_Sack
+  - name: Frame_0
     originalName: 
     pivot: {x: 0.51111114, y: -0.1627907}
     alignment: 9
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 45
       height: 43
-    spriteID: 2f0b66b0c9468d442bae903e7b0dcb58
+    spriteID: 74d5e8e380fa74e438ca108a28d85266
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -156,7 +156,7 @@ ScriptedImporter:
       y: 55
       width: 45
       height: 43
-    spriteID: 33b1f6b8cd4ddb543a483c525790ac34
+    spriteID: 396a2e462ef334946b5a7ed088cef996
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -182,7 +182,7 @@ ScriptedImporter:
         y: 7
         width: 45
         height: 43
-      spriteId: 2f0b66b0c9468d442bae903e7b0dcb58
+      spriteId: 74d5e8e380fa74e438ca108a28d85266
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -191,7 +191,7 @@ ScriptedImporter:
         y: 7
         width: 45
         height: 43
-      spriteId: 33b1f6b8cd4ddb543a483c525790ac34
+      spriteId: 396a2e462ef334946b5a7ed088cef996
     linkedCells: []
     parentIndex: -1
   platformSettings:
