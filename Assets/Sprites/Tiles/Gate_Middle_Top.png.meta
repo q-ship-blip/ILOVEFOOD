@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ba9571f83ffeee64f96731a0800dfe9f
+guid: da3bc4948b9709d4686a76c3c8494925
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 734713706704745605
-    second: Gate_Left_Top_0
+      213: 2112395713166202841
+    second: Gate_Middle_Top_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gate_Left_Top_0
+      name: Gate_Middle_Top_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 29
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5843fbb393a323a00800000000000000
-      internalID: 734713706704745605
+      spriteID: 9d7545c85bcb05d10800000000000000
+      internalID: 2112395713166202841
       vertices: []
       indices: 
       edges: []
