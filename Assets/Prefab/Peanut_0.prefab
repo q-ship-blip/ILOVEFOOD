@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 87683115613016404}
   - component: {fileID: 6301420144517972794}
-  - component: {fileID: 2277916370789375630}
+  - component: {fileID: 9015818548712468052}
   m_Layer: 0
   m_Name: FacePlayer
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angleOffset: 0
---- !u!114 &2277916370789375630
+--- !u!114 &9015818548712468052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,14 +55,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4069601722776933155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7f187f5b6bf5d48a937275b2048545, type: 3}
+  m_Script: {fileID: 11500000, guid: d2f6ffd4d0ffa8249892fa57df7289e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burgerProjectilePrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  shotDelay: 0.4
+  peanutProjectilePrefab: {fileID: 147291562081295348, guid: 4f46cdcf80ce6ff498457fde1e5ac8fc, type: 3}
+  shotDelay: 0.8
 --- !u!1 &4262810523791728019
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +333,7 @@ MonoBehaviour:
   nextWaypointDistance: 0.6
   pathUpdateInterval: 0.5
   attackStopRange: 5
-  smoothingTime: 0.1
+  smoothingTime: 0
   movementOffset: {x: 0, y: -0.5}
   AttackPosition: 0
   ignoredTags:
