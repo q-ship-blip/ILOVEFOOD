@@ -273,7 +273,7 @@ MonoBehaviour:
   nextWaypointDistance: 0.6
   pathUpdateInterval: 0.5
   attackStopRange: 4
-  smoothingTime: 0.1
+  smoothingTime: 0
   movementOffset: {x: 0, y: -0.5}
   AttackPosition: 0
   ignoredTags:
