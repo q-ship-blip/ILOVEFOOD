@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Pathfinding; // Make sure you have this!
 
 public class DoorManager : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class DoorManager : MonoBehaviour
         [Header("Doors to deactivate when these enemies are cleared (drag door GameObjects)")]
         public List<GameObject> doors;
         
-        // Used internally to ensure this group's doors are only deactivated once.
         [HideInInspector] public bool doorsDeactivated = false;
     }
 
@@ -21,7 +21,6 @@ public class DoorManager : MonoBehaviour
 
     void Update()
     {
-        // Check each door group and deactivate doors if all enemies are cleared
         foreach (DoorGroup group in doorGroups)
         {
             if (!group.doorsDeactivated && AllEnemiesCleared(group.enemies))
@@ -32,21 +31,40 @@ public class DoorManager : MonoBehaviour
         }
     }
 
-    // Checks if all enemy GameObjects in the list have been destroyed
     bool AllEnemiesCleared(List<GameObject> enemies)
     {
-        // Remove any destroyed (null) enemy references from the list
         enemies.RemoveAll(e => e == null);
         return enemies.Count == 0;
     }
 
-    // Deactivates all door GameObjects in the list
     void DeactivateDoors(List<GameObject> doors)
     {
         foreach (GameObject door in doors)
         {
             if (door != null)
-                door.SetActive(false);
+            {
+                // Grab bounds BEFORE deactivating
+                Collider2D col = door.GetComponent<Collider2D>();
+                if (col != null)
+                {
+                    Bounds bounds = col.bounds;
+
+                    // Disable the door visually and physically
+                    door.SetActive(false);
+
+                    // Update A* Grid Graph in the area the door occupied
+                    GraphUpdateObject guo = new GraphUpdateObject(bounds);
+                    AstarPath.active.UpdateGraphs(guo);
+                }
+                else
+                {
+                    // Fallback: just disable if no collider
+                    door.SetActive(false);
+                }
+            }
         }
+
+        // 🔁 Full graph rescan since map is small
+        AstarPath.active.Scan();
     }
 }

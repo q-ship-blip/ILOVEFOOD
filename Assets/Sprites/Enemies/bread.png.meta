@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d42d0c81e3e9d894888608bb176bb05d
+guid: 1cd1c055672e5b24e8337d62a1c3913d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6406154281553637950
-    second: Fries_0
+      213: -4431494890709657585
+    second: bread_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fries_0
+      name: bread_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 8
-        width: 30
-        height: 53
+        x: 24
+        y: 11
+        width: 23
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2cdc5a74f94c817a0800000000000000
-      internalID: -6406154281553637950
+      spriteID: f08da4f30ea2082c0800000000000000
+      internalID: -4431494890709657585
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Fries_0: -6406154281553637950
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

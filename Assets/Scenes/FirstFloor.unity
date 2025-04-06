@@ -625,7 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
   damping: 0
-  target: {fileID: 0}
+  target: {fileID: 1238302489}
 --- !u!1001 &628030547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3815,6 +3815,11 @@ Transform:
   - {fileID: 1966934021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1238302489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 95594727257441565, guid: 6a8f49472585b584dac47a9a2a611ada, type: 3}
+  m_PrefabInstance: {fileID: 1182956516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1275940949
 GameObject:
   m_ObjectHideFlags: 0
