@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    public string itemName;  // Set this in the inspector for each item type (e.g., "HealthPotion", "Coin", etc.)
+    [Tooltip("What should this item be counted as in the inventory?")]
+    public string inventoryItemName;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,8 +13,8 @@ public class ItemPickup : MonoBehaviour
 
             if (inventory != null)
             {
-                inventory.AddItem(itemName);
-                Destroy(gameObject);  // Item disappears after pickup
+                inventory.AddItem(inventoryItemName);
+                Destroy(gameObject);
             }
             else
             {

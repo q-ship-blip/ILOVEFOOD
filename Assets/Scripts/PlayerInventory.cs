@@ -1,58 +1,78 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class InventoryEntry
+{
+    public string itemName;
+    public int quantity;
+    public GameObject itemPrefab;
+}
+
 public class PlayerInventory : MonoBehaviour
 {
-    // This dictionary will hold item names and the count of how many the player has.
-    private Dictionary<string, int> inventory = new Dictionary<string, int>();
+    [Header("Set starting items here")]
+    public List<InventoryEntry> startingInventory = new List<InventoryEntry>();
 
-    // Call this when player picks up an item
+    // Internal dictionary for fast access
+    private Dictionary<string, InventoryEntry> inventoryDict = new Dictionary<string, InventoryEntry>();
+
+    private void Awake()
+    {
+        // Build dictionary from the serialized list
+        foreach (var entry in startingInventory)
+        {
+            if (!inventoryDict.ContainsKey(entry.itemName))
+            {
+                inventoryDict[entry.itemName] = entry;
+            }
+        }
+    }
+
     public void AddItem(string itemName)
     {
-        if (inventory.ContainsKey(itemName))
+        if (inventoryDict.ContainsKey(itemName))
         {
-            inventory[itemName]++;
+            inventoryDict[itemName].quantity++;
+        }
+        else if (startingInventory.Count < 10)
+        {
+            InventoryEntry newEntry = new InventoryEntry
+            {
+                itemName = itemName,
+                quantity = 1,
+                itemPrefab = null  // You can later assign this in UI if needed
+            };
+            startingInventory.Add(newEntry);
+            inventoryDict[itemName] = newEntry;
         }
         else
         {
-            if (inventory.Count < 10)  // Limit to 10 item types
-            {
-                inventory[itemName] = 1;
-            }
-            else
-            {
-                Debug.Log("Inventory full! Can't carry more types of items.");
-            }
+            Debug.Log("Inventory full! Can't carry more types of items.");
         }
 
-        Debug.Log($"Picked up: {itemName}. Total: {inventory[itemName]}");
+        Debug.Log($"Picked up: {itemName}. Total: {inventoryDict[itemName].quantity}");
     }
 
-    // Optional - for checking the count of a specific item
     public int GetItemCount(string itemName)
     {
-        if (inventory.ContainsKey(itemName))
-        {
-            return inventory[itemName];
-        }
-        return 0;
+        return inventoryDict.ContainsKey(itemName) ? inventoryDict[itemName].quantity : 0;
     }
 
-    // Debug method to show all items
     public void PrintInventory()
     {
         Debug.Log("Player Inventory:");
-        foreach (var item in inventory)
+        foreach (var entry in startingInventory)
         {
-            Debug.Log($"{item.Key}: {item.Value}");
+            Debug.Log($"{entry.itemName}: {entry.quantity}");
         }
     }
-        void Update()
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-        PrintInventory();
+            PrintInventory();
         }
     }
 }
-
