@@ -59,16 +59,26 @@ public class Enemy : MonoBehaviour
     }
 
     private void DropLoot()
+{
+    foreach (DropItem drop in possibleDrops)
     {
-        foreach (DropItem drop in possibleDrops)
-        {
-            if (drop.itemPrefab == null) continue;
+        if (drop.itemPrefab == null) continue;
 
-            float chance = Random.Range(0f, 1f);
-            if (chance <= drop.dropChance)
-            {
-                Instantiate(drop.itemPrefab, transform.position, Quaternion.identity);
-            }
+        float chance = Random.Range(0f, 1f);
+        if (chance <= drop.dropChance)
+        {
+            // Add slight random offset to the drop position
+            Vector3 randomOffset = new Vector3(
+                Random.Range(-0.5f, 0.5f),  // X-axis offset
+                Random.Range(-0.5f, 0.5f),  // Y-axis offset
+                0f                          // Z-axis (2D game)
+            );
+
+            Vector3 dropPosition = transform.position + randomOffset;
+
+            Instantiate(drop.itemPrefab, dropPosition, Quaternion.identity);
         }
     }
+}
+
 }
