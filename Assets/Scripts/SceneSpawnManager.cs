@@ -3,20 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneSpawnManager : MonoBehaviour
 {
-    void Start()
+    void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
-        // If the scene is already loaded (e.g. entering first scene), position player right away
-        PositionPlayer();
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        PositionPlayer();
+        Invoke(nameof(MovePlayerToSpawn), 0.1f); // Slight delay to ensure all objects are loaded
     }
 
-    void PositionPlayer()
+    void MovePlayerToSpawn()
     {
         GameObject player = GameObject.FindWithTag("Player");
         GameObject spawnPoint = GameObject.Find("PlayerSpawn");
@@ -24,11 +26,11 @@ public class SceneSpawnManager : MonoBehaviour
         if (player != null && spawnPoint != null)
         {
             player.transform.position = spawnPoint.transform.position;
+            Debug.Log($"Player moved to spawn point in scene: {spawnPoint.transform.position}");
         }
-    }
-
-    void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        else
+        {
+            Debug.LogWarning("Could not move player — Player or PlayerSpawn not found.");
+        }
     }
 }
