@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 10;     // Total health in **half hearts**.
     public int currentHealth;      // Current health in **half hearts**.
 
+    public ScreenFlasher screenFlasher;
+
     public HeartBarController heartBar;
 
     void Start()
@@ -34,27 +36,36 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int halfHearts){
-        currentHealth -= halfHearts;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        if (currentHealth < 1)  // Health is 0 or less
-        {
-            OnPlayerDeath();
-        }
-        // Update hearts after taking damage
-        heartBar.UpdateHearts();
+public void TakeDamage(int halfHearts)
+{
+    currentHealth -= halfHearts;
+    currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+    if (screenFlasher != null) screenFlasher.FlashDamage();
+
+    if (currentHealth < 1)
+    {
+        OnPlayerDeath();
     }
 
-    // Optional healing method
-    public void Heal(int halfHearts){
-        currentHealth += halfHearts;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+    heartBar.UpdateHearts();
+}
 
-        heartBar.UpdateHearts();
-    }
+public void Heal(int halfHearts)
+{
+    currentHealth += halfHearts;
+    currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+    if (screenFlasher != null) screenFlasher.FlashHeal();
+
+    heartBar.UpdateHearts();
+}
    private void OnPlayerDeath()
     {
+    currentHealth = 10;
     Debug.Log(gameObject.name + " died!");
     GameManager.Instance.GoToDeathScene();
     }    
 }
+
+
