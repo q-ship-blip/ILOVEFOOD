@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BestCookingScene.unity
     guid: 80e0e759bfa893942bcb774e3127f2b7
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: 4a1181f7ea2127e4f9cdd42f4463bd0d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

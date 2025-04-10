@@ -10,6 +10,7 @@ TagManager:
   - Shield
   - Window
   - Barrier
+  - Spawn
   layers:
   - Default
   - TransparentFX

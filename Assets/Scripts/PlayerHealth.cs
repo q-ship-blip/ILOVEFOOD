@@ -52,11 +52,9 @@ public class PlayerHealth : MonoBehaviour
 
         heartBar.UpdateHearts();
     }
-    private void OnPlayerDeath()
+   private void OnPlayerDeath()
     {
-        // Change to the "GameOver" scene or whichever scene you want.
-       // SceneManager.LoadScene("GameOver");  // Make sure "GameOver" exists in your Build Settings!
-       Debug.Log(gameObject.name + " died!");
-       Destroy(gameObject);
+    Debug.Log(gameObject.name + " died!");
+    GameManager.Instance.GoToDeathScene();
     }    
 }

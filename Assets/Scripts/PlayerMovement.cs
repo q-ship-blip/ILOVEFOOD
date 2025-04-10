@@ -16,6 +16,16 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("PlayerMovement requires a Rigidbody2D component.");
         }
+       
+        GameObject spawnPoint = GameObject.FindGameObjectWithTag("Spawn");
+        if (spawnPoint != null)
+        {
+            transform.position = spawnPoint.transform.position;
+        }
+        else
+        {
+            Debug.LogWarning("No Spawn point found in this scene!");
+        }
     }
 
     void Update()
