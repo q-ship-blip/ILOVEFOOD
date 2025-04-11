@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 66087d1b27ed40f4991821f9448e6653
+guid: ffee59c5062488442ab90081cfc7ae8b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3180879816699848979
-    second: Bagel_0
+      213: -116519914733850393
+    second: Bagel_Damaged_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bagel_0
+      name: Bagel_Damaged_0
       rect:
         serializedVersion: 2
         x: 15
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 319aa9b1751c42c20800000000000000
-      internalID: 3180879816699848979
+      spriteID: 7e0b70141c9026ef0800000000000000
+      internalID: -116519914733850393
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Bagel_0: 3180879816699848979
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

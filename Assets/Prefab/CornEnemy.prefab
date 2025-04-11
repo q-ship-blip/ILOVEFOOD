@@ -274,7 +274,7 @@ MonoBehaviour:
   health: 4
   possibleDrops:
   - itemPrefab: {fileID: 7937882450561744072, guid: 12f400fa0f0d6f64798bd78aef048d90, type: 3}
-    dropChance: 1
+    dropChance: 0.7
   - itemPrefab: {fileID: 0}
     dropChance: 0
   - itemPrefab: {fileID: 0}
