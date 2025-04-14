@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ffee59c5062488442ab90081cfc7ae8b
+guid: 9838848bd916f4574bcf4c1a480cf665
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -116519914733850393
-    second: Bagel_Damaged_0
+      213: 6675004742782635521
+    second: Brick_wall_3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bagel_Damaged_0
+      name: Brick_wall_3_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 12
-        width: 39
-        height: 41
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e0b70141c9026ef0800000000000000
-      internalID: -116519914733850393
+      spriteID: 10e4b97a27162ac50800000000000000
+      internalID: 6675004742782635521
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bagel_Damaged_0: -116519914733850393
+      Brick_wall_3_0: 6675004742782635521
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
