@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 4
   possibleDrops:
-  - itemPrefab: {fileID: 7937882450561744072, guid: 12f400fa0f0d6f64798bd78aef048d90, type: 3}
+  - itemPrefab: {fileID: 7937882450561744072, guid: c76f48a581758448b81b94f4825f1c30, type: 3}
     dropChance: 1
   - itemPrefab: {fileID: 0}
     dropChance: 0
