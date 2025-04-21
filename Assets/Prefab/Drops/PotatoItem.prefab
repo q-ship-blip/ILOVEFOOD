@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItemName: Corn
+  healAmt: 2
 --- !u!60 &-4456622905869138089
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.15, y: 0.17}
+    oldSize: {x: 0.46875, y: 0.53125}
     newSize: {x: 0.65625, y: 0.65625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

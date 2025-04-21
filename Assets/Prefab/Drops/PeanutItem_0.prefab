@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItemName: Peanut
+  healAmt: 1
 --- !u!60 &4727531978119587774
 PolygonCollider2D:
   m_ObjectHideFlags: 0

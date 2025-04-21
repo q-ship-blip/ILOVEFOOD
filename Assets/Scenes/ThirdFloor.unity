@@ -106517,7 +106517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31df2c40c3652394185257b326755d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: FirstFloor
+  sceneToLoad: EndScreen
 --- !u!212 &1362250952
 SpriteRenderer:
   m_ObjectHideFlags: 0

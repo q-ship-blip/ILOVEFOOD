@@ -56,7 +56,6 @@ public void Heal(int halfHearts)
     currentHealth += halfHearts;
     currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-    if (screenFlasher != null) screenFlasher.FlashHeal();
 
     heartBar.UpdateHearts();
 }

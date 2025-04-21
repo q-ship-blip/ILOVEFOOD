@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItemName: Burger
+  healAmt: 2
 --- !u!60 &-4456622905869138089
 PolygonCollider2D:
   m_ObjectHideFlags: 0

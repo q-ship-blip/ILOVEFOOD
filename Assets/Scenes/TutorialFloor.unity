@@ -563,8 +563,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pick up the corns to open the gate
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4b52a89011c544d793a707079052c95, type: 2}
+  m_sharedMaterial: {fileID: 872455671499930975, guid: a4b52a89011c544d793a707079052c95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -658,7 +658,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 872455671499930975, guid: a4b52a89011c544d793a707079052c95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -947,8 +947,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Move Using WASD
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4b52a89011c544d793a707079052c95, type: 2}
+  m_sharedMaterial: {fileID: 872455671499930975, guid: a4b52a89011c544d793a707079052c95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1042,7 +1042,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 872455671499930975, guid: a4b52a89011c544d793a707079052c95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32192,6 +32192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItemName: Coin
+  healAmt: 0
 --- !u!212 &1156722888
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36542,8 +36543,8 @@ MonoBehaviour:
 
     Shield 3 Shots to Pass'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4b52a89011c544d793a707079052c95, type: 2}
+  m_sharedMaterial: {fileID: 872455671499930975, guid: a4b52a89011c544d793a707079052c95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -36637,7 +36638,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 872455671499930975, guid: a4b52a89011c544d793a707079052c95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36908,8 +36909,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Left click to use your sword
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4b52a89011c544d793a707079052c95, type: 2}
+  m_sharedMaterial: {fileID: 872455671499930975, guid: a4b52a89011c544d793a707079052c95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -37003,7 +37004,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 872455671499930975, guid: a4b52a89011c544d793a707079052c95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37041,7 +37042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.07565, y: 5.23}
+  m_AnchoredPosition: {x: -37.07565, y: 5.1}
   m_SizeDelta: {x: 14.1866, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1628037845
