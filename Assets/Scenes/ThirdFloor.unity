@@ -976,15 +976,12 @@ MonoBehaviour:
     - {fileID: 1838817764}
     doors:
     - {fileID: 801619380}
-    - {fileID: 801619380}
     doorsDeactivated: 0
   - enemies:
     - {fileID: 1867398527}
     - {fileID: 634340374}
     - {fileID: 1215521814}
     doors:
-    - {fileID: 1129993786}
-    - {fileID: 1129993786}
     - {fileID: 1129993786}
     doorsDeactivated: 0
 --- !u!4 &436206960
